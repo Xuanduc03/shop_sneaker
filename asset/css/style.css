@@ -1,0 +1,591 @@
+/* google font link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+/* variable css */
+:root {
+
+    --header-height: 3rem;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+/* color */
+    --dark-color: #141414;
+    --dark-color-light: #8a8a8a;
+    --dark-color-lighten: #f2f2f2;
+    --white-color: #fff;
+/* font size */
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 1.25rem;
+    --bigger-font-size: 1.5rem;
+    --biggest-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .813rem;
+/* margin all */
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+/* z index */
+    --z-fixed: 100;
+/* rotate img */
+    --rotate-img: rotate(-30deg);
+}
+
+@media screen and (min-width: 768px){
+    :root{
+    --big-font-size: 1.5rem;
+    --bigger-font-size: 2rem;
+    --biggest-font-size: 3rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .878rem;
+    }
+}
+/* base */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+h1, h2, h3, p, ul {
+    margin: 0;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* class css */
+.section {
+    padding: 5rem 0 2rem;
+}
+.section-title {
+    position: relative;
+    font-size: var(--big-font-size);
+    margin-bottom: var(--mb-4);
+    text-align: center;
+    letter-spacing: .1rem;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 0.18rem;
+    top: -1rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--dark-color);
+}
+/* layout  */
+.bg-grid {
+    max-width: 1024px;
+    display: grid;
+    width: calc(100% - 2rem);
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+.l-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--dark-color-lighten);
+}
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width:768px) {
+    .nav_menu {
+    position: fixed;
+    top: var(--header-height);
+    width: 70%;
+    height: 100vh;
+    left: -100%;
+    padding: 2rem;
+    border-radius: .5rem;
+    background-color: #ddd;
+    transition: .5s;
+    }
+}
+
+.nav-item {
+    margin-bottom: var(--mb-4);
+}
+.nav_logo {
+    font-size: var(--font-semibold);
+}
+.nav_shop {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.nav__toggle {
+    color: var(--dark-color);
+    display: inline-flex;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.nav__close {
+    top: 1rem;
+    right: 1rem;
+    color: var(--dark-color);
+    position: absolute;
+    cursor: pointer;
+    font-size: 2rem;
+}
+ /* show menu */
+ .show {
+    left: 0;
+ }
+ /* active link  */
+ .active {
+    position: relative;
+ }
+ .active::before{
+    position: absolute;
+    bottom: -.5rem;
+    left: 45%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--dark-color);
+ }
+/* change background header */
+.scroll-header 
+{
+    background-color: #fff;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 2px 4px hsla(0 , 0%, 1%, 1);
+}
+/* =========  home ================ */
+.home {
+    background-color:var(--dark-color-lighten);
+    overflow: hidden;
+}
+.home-container {
+    height: calc(100vh - var(--header-height));
+}
+.home-sneaker {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.home-shape{
+    width: 220px;
+    height: 220px;
+    background-color: #333;
+    border-radius: 50%;
+}
+.home-img{
+    position:absolute;
+    top: 6.5rem;
+    max-width: initial;
+    width: 275px;
+    transform: var(--rotate-img);
+}
+.home-new{
+    display: block;
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--mb-2);
+}
+.home-title {
+    font-size: var(--bigger-font-size);
+    margin-bottom: var(--mb-1);
+}
+.home-description {
+    margin-bottom: var(--mb-4);
+}
+/* ======== button ======== */
+.button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 1.125rem 2rem;
+    font-weight: var(--font-medium);
+    border-radius: 0.5rem;
+    transition: .3s;
+}
+.button:hover {
+    transform: translateY(-0.25rem);
+}
+.button-light{
+    color: #333;
+    display: inline-flex;
+    font-weight: var(--font-bold);
+    align-items: center;
+}
+.button-icon{
+    font-size: 1.25rem;
+    margin-left: var(--mb-1);
+    transition: .3s;
+}
+.button-light:hover .button-icon {
+    transform: translateY(.25rem);
+}
+/* featured */
+
+.featured-container{
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.sneaker{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ddd;
+    border-radius: .5rem;
+    transition: .3s;
+}
+.sneaker-sale{
+    position: absolute;
+    color: #fff;
+    background-color: #333;
+    left: .5rem;
+    padding: 0.25rem 0.5rem;
+    letter-spacing: .5rem;
+    transform: rotate(-90deg);
+    border-radius: .25rem;
+    letter-spacing: .1rem;
+}
+.sneaker-img{
+    width: 220px;
+    margin-top: var(--mb-3);
+    margin-bottom: var(--mb-6);
+    transform: var(--rotate-img);
+    filter: drop-shadow(0 13px 8px rgba(0,0,0,0.2));
+}
+.sneaker-name, .sneaker-price {
+    font-size: var(--h2-font-size);
+    letter-spacing: .1rem;
+    font-weight: var(--font-semibold);
+}
+.sneaker-name{
+    margin-bottom: var(--mb-1);
+}
+.sneaker-price{
+    margin-bottom: var(--mb-3);
+}
+.sneaker:hover{
+    transform: translateY(-.5rem);
+}
+
+/* collection */
+.collection-container{
+    row-gap: 2rem;
+    justify-content: center;
+}
+.collection-card{
+    position: relative;
+    display: flex;
+    height: 328px;
+    background-color:#ddd;
+    padding: 2rem;
+    border-radius: .5rem;
+    transition: .3s;
+}
+.collection-data{
+    align-self: flex-end;
+}
+.collection-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 235px;
+}
+.collection-name{
+    font-size: var(--bigger-font-size);
+    margin-bottom: .25rem;
+}
+.collection-des{
+    margin-bottom: var(--mb-2);
+}
+.collection-card:hover{
+    transform: translateY(-.5rem);
+}
+/* ========== women sneaker =============== */
+.women-container {
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+/* ========== offer ========== */
+.offer-container {
+    grid-template-columns: 55% 45% ;
+    column-gap: 0;
+    background-color: var(--dark-color-lighten);
+    justify-content: center;
+    border-radius: .5rem;
+}
+.offer-data {
+    padding: 4rem 0 4rem 1.5rem;
+}
+.offer-title {
+    font-size: var(--bigger-font-size);
+    margin-bottom: 0.25rem;
+}
+.offer-des{
+    margin-bottom: var(--mb-3);
+}
+.offer-img{
+    width: 154px;
+}
+/* new collection */
+.new-container{
+    row-gap: 2rem;
+}
+.new-men{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--dark-color-lighten);
+    border-radius: .5rem;
+    padding: 2rem;
+}
+.new_men-img {
+    width: 276px;
+    margin-bottom: var(--mb-3);
+}
+.new-title {
+    font-size: var(--bigger-font-size);
+    margin-bottom: .25rem;
+}
+.new-price {
+    display: block;
+    margin-bottom: var(--mb-3);
+}
+.new-sneaker {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.new_sneaker-cart{
+    position: relative;
+    border-radius: .5rem;
+    padding: 3.5rem 1.5rem;
+    background-color: var(--dark-color-lighten);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.new_sneaker-img {
+    width: 220px;
+}
+.new_sneaker-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(138, 138, 138, .3);
+    transition: .3s;
+}
+.new_sneaker-cart:hover .new_sneaker-overlay{
+    bottom: 0;
+}
+/* new seller */
+.seller-container{
+    background-color: #333;
+    color: #ddd;
+    border-radius: .5rem;
+    padding: 2rem 0.5rem;
+    text-align: center;
+}
+.seller-title{
+    font-size: var(--bigger-font-size);
+    margin-bottom: var(--mb-2);
+}
+.seller-des{
+    margin-bottom: var(--mb-5);
+}
+.form-sub{
+    display: flex;
+    column-gap: .5rem;
+    padding: 0.5rem;
+    border-radius: .5rem;
+    background-color: #fff;
+}
+.form-input {
+    outline: none;
+    border: none;
+    width: 90%;
+    font-size: var(--normal-font-size);
+}
+.form-input::placeholder{
+    color: #333;
+    font-family: var(--body-font);
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-semibold);
+}
+.footer-container{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.footer-box {
+    margin-bottom: var(--mb-4);
+}
+.footer-title {
+    font-size: var(--big-font-size);
+}
+.footer-link {
+    display: block;
+    width: max-content;
+    margin-bottom: var(--mb-1);
+}
+.footer-social {
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+}
+.footer-copy {
+    padding-top: 3rem;
+    font-size: var(--smaller-font-size);
+    color: var(--dark-color-light);
+    text-align: center;
+}
+.sneaker-pages {
+    margin-top: var(--mb-6);
+}
+.sneaker-bag {
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+}
+.sneaker-bag:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* media queries */
+
+@media screen and (min-width: 576px) {
+    .collection-container {
+        grid-template-columns: 415px;
+    }
+    .collection-img {
+        width: 260px;
+    }
+    .offer-container {
+        grid-template-columns: max-content max-content;
+    }
+    .offer-data {
+        text-align: center;
+    }
+    .new-men {
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    body {
+    margin: 0;
+    }
+    .section {
+        padding: 7rem 0 3rem;
+    }
+    .section-title::after{
+        width: 76px;
+    }
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+    .nav_menu {
+        margin-left: auto;
+    }
+    .nav_list {
+        display: flex;
+    }
+    .nav-item {
+        margin-left: var(--mb-6);
+        margin-bottom: 0;
+    }
+    .nav__toggle{
+        display: none;
+    }
+    .nav__close{
+        display: none;
+    }
+
+    .home-container{
+        height: 100vh;
+        grid-template-columns: max-content max-content;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-sneaker {
+        order: 1;
+    }
+    .home-shape {
+        width: 376px;
+        height: 376px;
+    }
+    .home-img{
+        width: 470px;
+        top: 3.5rem;
+        right: 0;
+        left: -3rem;
+    }
+    .new-container{
+        grid-template-columns: max-content max-content;
+        justify-content: center;
+        align-items: center;
+        padding: 4.5rem 2rem;
+        column-gap: 3rem;
+    }
+    .seller-des{
+        margin-bottom: 0;
+    }
+    .form-sub {
+        width: 360px;
+        height: max-content;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .bg-grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .home-container {
+        column-gap: 8rem;
+    }
+    .collection-container {
+        grid-template-columns: repeat(2, 415px);
+    }
+    .new-container {
+        grid-template-columns: max-content 1fr;
+    }
+    .new-men{
+        align-items: initial;
+        justify-content: flex-end;
+        padding: 4rem 2rem;
+    }
+    .new_men-img{
+        margin-bottom: var(--mb-6);
+    }
+}
